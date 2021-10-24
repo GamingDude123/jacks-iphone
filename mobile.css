@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+   
+}
+
+/*Counter*/
+
+.counterContainer{
+    position: absolute;
+    top:25px;
+    left:25px;
+}
+
+#scorebox{
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+
+#ppcHolder{
+    margin-top: 10px;
+    display: inline-flex;
+    border: 1px solid black;
+    padding: .6rem 2rem;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#ppc{
+    margin: 0;
+}
+
+/*Carousel*/
+
+.carousel{
+    box-shadow: 2px 2px 5px rgba(0,0 , 0, 0.5);
+    height: 50vh;
+    width: 200px;
+    overflow: hidden;
+}
+
+.image-container{
+    display: flex;
+    /*flex-direction: column;*/
+    transition: transform 0.5s ease-in-out;
+    transform: translatex(0px);
+    /* 645px*/ 
+   
+}
+
+img{
+    /*object-fit: cover;*/
+    height:350px;
+    margin: 1rem 1rem;
+}
+
+/*Upgrades*/
+
+#btn{
+    border-radius: 5px;
+    background-color: rgb(51, 51, 51);
+    padding: .75rem 1rem; 
+    font-size: 10px;
+    cursor:not-allowed;
+    outline:none;        
+}
+
+#btn.inactive{
+    display: none;
+}
+
+#iphoneInfo{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+#btn.active{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(23, 81, 207);
+}
+
+.upgradesLeft{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+}
+
+.upgradesRight{
+    position: absolute;
+    bottom: 50px;
+    right:20%;
+    display: flex;
+    margin-left:25%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.upgradesLeft div, .upgradesRight div{
+    display: flex;
+    align-items: center;
+    /*justify-content: space-between;*/
+    height: 30px;
+    width: 85px;
+    border: 1px solid black;
+    margin: .5rem;
+    padding: .3rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.upgradesLeft div{
+    margin-left: 0;
+}
+
+#upgrade1.dark, #upgrade2.dark, #upgrade3.dark, #upgrade4.dark, #upgrade5.dark, #upgrade6.dark {
+    background-color: rgba(37, 37, 37, 0.5);
+    color: black;
+}
+
+.upgradeReq{
+    position: absolute;
+    left: 250px;
+    display: none;
+}
+
+.upgradecount{
+    position: absolute;
+    right: 30px;
+    display: none;
+}
+
+#mobileDisappear{
+    display: none;
+}

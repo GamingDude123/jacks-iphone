@@ -6,14 +6,17 @@
     <title>Iphone Upgrader</title>
     <!-- Media query for narrow browser width -->
     <link rel="stylesheet" media="only screen and (max-width: 480px)" href="mobile.css">
-    <link rel="stylesheet"  media="only screen and (min-width: 1025px)" href="style.css" />
+    <link rel="stylesheet"  media="only screen and (min-width: 481px) and (max-width: 768px)" href="tablet.css" />
+    <link rel="stylesheet"  media="only screen and (min-width: 769px) and (max-width: 1279px)" href="biggeripad.css" />
+    <link rel="stylesheet"  media="only screen and (min-width: 1280px)" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
 
     <div class="counterContainer">
         <section id="scorebox"></section>
-        <section id="ppcHolder">PPC: <p id="ppc"></p></section>
+        <section id="ppcHolder">PPC: <p id="ppc"></p></section><br>
+        <section id="ppsHolder">PPS: <p id="pps"></p></section>
     </div>
 
 
@@ -34,10 +37,11 @@
     </div>
 
     <div class="upgradesLeft">
-
+        Auto Clicker<br><br>
        <button id="btn" >UPGRADE IPHONE</button>
        <div id="iphoneInfo">
            <section id="iphoneVer"> </section>
+          <br id = "mobile">
            <section id="pointsForUpgrade"> BLAHM</section>
        </div>
 
@@ -45,7 +49,7 @@
 
     <div class="upgradesRight" >
         <div style="border:none; border-bottom: 1px solid black; padding: none; margin: none;;" id="mobileDisappear">
-            <section style="position: absolute; left: 200px;">To Upgrade</section>
+            <section id="toUpgrae" style="position: absolute; left: 200px;">To Upgrade</section>
             <section class="upgradecount">Amount </section>
         </div>
         <div id="upgrade1">

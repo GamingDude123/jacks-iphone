@@ -9,8 +9,12 @@ const ppc = document.getElementById("ppc")
 let ppcNumber = 1;
 ppc.innerText = ppcNumber;
 
+const pps = document.getElementById("pps")
+let ppsNumber = 0;
+pps.innerText = ppsNumber;
+
 const upgradeButton = document.getElementById("btn") 
-let score = 0;
+let score = 00;
 scorebox.innerText = score;
 
 var iphones=["Iphone 1","Iphone 3g", "Iphone 4", "iphone 5", "iphone 6","iphone 7", "iphone 8", "iphone 10","iphone 11", "iphone 12",]
@@ -209,7 +213,9 @@ upgradeButton.addEventListener("click",()=>{
 /* AUTOMATIC COUNTER */
 function automaticCounter(){
     if (iphoneVersionNumber > 0) /* if iphone was upgrade*/{
-        score = score + iphoneVersionNumber*5;
+        let autoclickerpoints = iphoneVersionNumber *5;
+        score = score + autoclickerpoints;
+        pps.innerText = autoclickerpoints;
         scorebox.innerText = score;
     }
 }
@@ -229,8 +235,16 @@ function checkUpgrade(){
 
 /* once you buy the upgrade it switches the iphone*/
 function iphoneUpgrader(){
-    idx++; 
-    imgs.style.transform=`translateX(${idx*-337}px)`
+   /* if (window.matchMedia("(max-width: 480px;)"))
+    {
+        idx++;
+        imgs.style.transform=`translateX(${idx*-55.5}vw)`
+    }
+
+    else{*/
+        idx++; 
+        imgs.style.transform=`translateX(${idx*-112}%)`
+   //* }*/
 }
 
 /*TURN UPGRADES DARK IF CANT AFFORD*/

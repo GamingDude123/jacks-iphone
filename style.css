@@ -9,7 +9,7 @@ body{
     justify-content: center;
     margin: 0;
     min-height: 100vh;
-   
+    background-image: linear-gradient(180deg, rgb(202, 214, 206), rgb(8, 84, 128));
 }
 
 /*Counter*/
@@ -30,7 +30,7 @@ body{
     display: inline-flex;
     border: 1px solid black;
     padding: .6rem 2rem;
-    background-color: green;
+    background-image: linear-gradient(180deg, rgb(202, 214, 206), rgb(17, 151, 230));
     color: white;
     border-radius: 5px;
     font-weight: bold;
@@ -41,7 +41,7 @@ body{
 }
 
 #ppsHolder{
-    background-color: rgb(255, 187, 0);
+    background-image: linear-gradient(180deg, rgb(202, 214, 206), rgb(17, 151, 230));
 }
 
 /*Carousel*/
@@ -90,9 +90,9 @@ img{
 }
 
 #btn.active{
-    color: white;
+    color: black;
     cursor: pointer;
-    background-color: rgb(23, 81, 207);
+    background-image: linear-gradient(180deg, rgb(202, 214, 206), rgb(235, 221, 23));
 }
 
 .upgradesLeft{

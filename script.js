@@ -1,6 +1,18 @@
 const imgs = document.getElementById("imgs")
 const img = document.querySelectorAll("#imgs img")
 let idx= 0;
+/*
+function scoreSave(){
+    
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("scorebox").innerHTML = localStorage.clickcount;
+  }
+*/
+
 
 
 const clicker = document.getElementById("click");
@@ -14,7 +26,7 @@ let ppsNumber = 0;
 pps.innerText = ppsNumber;
 
 const upgradeButton = document.getElementById("btn") 
-let score = 00;
+let score = 0;
 scorebox.innerText = score;
 
 var iphones=["Iphone 1","Iphone 3g", "Iphone 4", "iphone 5", "iphone 6","iphone 7", "iphone 8", "iphone 10","iphone 11", "iphone 12",]
@@ -28,6 +40,51 @@ pointsForUpgradeBox.innerText=pointsForUpgrade
 
 setInterval(checkUpgrade, 100)
 setInterval(automaticCounter, 1000)
+
+/* Score shortner*/
+let shortNumber = ""
+
+function numberShort(score){
+    if (score < 1000000){
+        shortNumber = score
+    }
+
+    else if (score >=1000000000000000000){
+        shortNumber = Math.floor(score/1000000000000000)
+        shortNumber = (shortNumber/1000) + "QN"
+    }
+    
+    
+    else if (score >=1000000000000000){
+        shortNumber = Math.floor(score/1000000000000)
+        shortNumber = (shortNumber/1000) + "QD"
+    }
+
+
+
+    else if (score >=1000000000000){
+        shortNumber = Math.floor(score/1000000000)
+        shortNumber = (shortNumber/1000) + "T"
+    }
+    else if (score >=1000000000){
+        shortNumber = Math.floor(score/1000000)
+         shortNumber = (shortNumber/1000) + "B"
+     }
+    else if (score >= 1000000){
+        shortNumber = Math.floor(score/10000)
+        shortNumber = (shortNumber/100) + "M"
+    }
+   /* Make one for billion and for trillion*/
+
+ 
+
+
+
+
+    return shortNumber
+}
+
+/* */
 
 /* UPGRADE 1*/
 
@@ -47,7 +104,8 @@ upgrade1.addEventListener("click", () =>{
         upgrade1reqNumber = Math.floor(upgrade1reqNumber * 1.5);
         upgrade1req.innerText= upgrade1reqNumber;
         upgrade1count.innerText= upgrade1countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -69,7 +127,8 @@ upgrade2.addEventListener("click", () =>{
         upgrade2reqNumber = Math.floor(upgrade2reqNumber * 1.6);
         upgrade2req.innerText= upgrade2reqNumber;
         upgrade2count.innerText= upgrade2countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -92,7 +151,8 @@ upgrade3.addEventListener("click", () =>{
 
         upgrade3req.innerText= upgrade3reqNumber;
         upgrade3count.innerText= upgrade3countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -115,7 +175,8 @@ upgrade4.addEventListener("click", () =>{
 
         upgrade4req.innerText= upgrade4reqNumber;
         upgrade4count.innerText= upgrade4countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -138,7 +199,8 @@ upgrade5.addEventListener("click", () =>{
 
         upgrade5req.innerText= upgrade5reqNumber;
         upgrade5count.innerText= upgrade5countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -161,7 +223,8 @@ upgrade6.addEventListener("click", () =>{
 
         upgrade6req.innerText= upgrade6reqNumber;
         upgrade6count.innerText= upgrade6countNumber;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay
     }
 })
 
@@ -171,8 +234,12 @@ upgrade6.addEventListener("click", () =>{
 
 clicker.addEventListener("click", () =>{
     /*SUPER IMPORTANT  SCORE IS HERE*/
+    /*scoreSave()*/
     score = score + ppcNumber
-    scorebox.innerText = score
+    scoreDisplay = numberShort(score)
+    scorebox.innerText = scoreDisplay                                                       
+    
+   
 })
 
 
@@ -203,7 +270,9 @@ upgradeButton.addEventListener("click",()=>{
     iphoneVer.innerText=iphones[iphoneVersionNumber];
 
     score= score - pointsForUpgrade;
-    scorebox.innerText = score;
+    
+    scoreDisplay = numberShort(score)
+    scorebox.innerText = scoreDisplay  
     upgradeButton.classList.remove("active");
     pointsForUpgrade = pointsForUpgrade * 10; /*change this*/
     pointsForUpgradeBox.innerText=pointsForUpgrade
@@ -216,7 +285,9 @@ function automaticCounter(){
         let autoclickerpoints = iphoneVersionNumber *5;
         score = score + autoclickerpoints;
         pps.innerText = autoclickerpoints;
-        scorebox.innerText = score;
+        scoreDisplay = numberShort(score)
+        scorebox.innerText = scoreDisplay  
+        
     }
 }
 
@@ -291,3 +362,4 @@ function upgradeBlur(){
         upgrade6.classList.remove("dark")
     }
 }
+
